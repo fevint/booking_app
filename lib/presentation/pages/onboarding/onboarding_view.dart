@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'onboarding_cubit.dart';
 import 'component/component.dart';
-import 'onboarding_state.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
