@@ -23,5 +23,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     }
   }
 
-  void skip() {}
+  void skip() {
+    // TODO: implentasi skip
+  }
 }

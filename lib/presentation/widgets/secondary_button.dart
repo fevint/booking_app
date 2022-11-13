@@ -1,43 +1,44 @@
-import 'package:booking_apps/config/config.dart';
 import 'package:flutter/material.dart';
+import '../../config/config.dart';
 
-class PrimaryButton extends StatelessWidget {
-  const PrimaryButton(
+class SecondaryButton extends StatelessWidget {
+  const SecondaryButton(
       {Key? key,
-      this.type = PrimaryButtonType.type3,
+      this.type = SecondaryType.type3,
       required this.onPressed,
       required this.text,
       this.width = 78})
       : super(key: key);
-  final PrimaryButtonType type;
+  final SecondaryType type;
   final VoidCallback? onPressed;
   final String text;
   final double width;
 
   @override
   Widget build(BuildContext context) {
-    return type == PrimaryButtonType.type1
+    return type == SecondaryType.type1
         ? _type1()
-        : type == PrimaryButtonType.type2
+        : type == SecondaryType.type2
             ? _type2()
             : _type3();
   }
 
   Widget _type1() {
     return SizedBox(
-      width: width,
       height: 24,
-      child: ElevatedButton(
+      width: width,
+      child: OutlinedButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColor.ink01,
+        style: OutlinedButton.styleFrom(
+          side: const BorderSide(color: AppColor.ink01),
+          backgroundColor: AppColor.ink06,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4),
           ),
         ),
         child: Text(
           text,
-          style: AppFont.componentSmall.copyWith(color: AppColor.ink06),
+          style: AppFont.componentSmall,
         ),
       ),
     );
@@ -45,19 +46,20 @@ class PrimaryButton extends StatelessWidget {
 
   Widget _type2() {
     return SizedBox(
-      width: width,
       height: 32,
-      child: ElevatedButton(
+      width: width,
+      child: OutlinedButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColor.ink01,
+        style: OutlinedButton.styleFrom(
+          side: const BorderSide(color: AppColor.ink01),
+          backgroundColor: AppColor.ink06,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4),
           ),
         ),
         child: Text(
           text,
-          style: AppFont.componentMediumBold.copyWith(color: AppColor.ink06),
+          style: AppFont.componentMediumBold,
         ),
       ),
     );
@@ -65,23 +67,24 @@ class PrimaryButton extends StatelessWidget {
 
   Widget _type3() {
     return SizedBox(
-      width: width,
       height: 57,
-      child: ElevatedButton(
+      width: width,
+      child: OutlinedButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColor.ink01,
+        style: OutlinedButton.styleFrom(
+          side: const BorderSide(color: AppColor.ink01),
+          backgroundColor: AppColor.ink06,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4),
           ),
         ),
         child: Text(
           text,
-          style: AppFont.componentLarge.copyWith(color: AppColor.ink06),
+          style: AppFont.componentLarge,
         ),
       ),
     );
   }
 }
 
-enum PrimaryButtonType { type1, type2, type3 }
+enum SecondaryType { type1, type2, type3 }
